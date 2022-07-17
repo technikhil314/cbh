@@ -9,6 +9,13 @@
   },
   "author": "",
   "license": "ISC",
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
+  },
   "devDependencies": {
     "jest": "^28.1.0"
   }
