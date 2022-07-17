@@ -9,3 +9,8 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+1. Early returns makes code more readable and predictable hence I have used early returns
+2. The code becomes more readable as we are mutating the `candidate` variable only once in the whole flow so developer does not have have to keep track if latest value in `candidate` making it more predictable and easy to following
+3. Returning with some basic validations makes the validation rules as well very clear so the function consumer can also understand the data validations rules by taking a look at function body
+4. Since hex representation of sha-512 is 128 characters long the first if was always going to meet `candidate.length <= MAX_PARTITION_KEY_LENGTH` so it made sense to return the hash without letting the flow through the `candidate.length <= MAX_PARTITION_KEY_LENGTH` condition check
